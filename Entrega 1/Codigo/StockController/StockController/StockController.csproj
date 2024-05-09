@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D441029-9622-4488-9D54-05E577302B8F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StockController</RootNamespace>
+    <AssemblyName>StockController</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>estoque-pronto.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Inventory_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_Screen.Designer.cs">
+      <DependentUpon>Inventory_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodesSuppliers.cs" />
+    <Compile Include="Models\MovsStock.cs" />
+    <Compile Include="Models\Purchases.cs" />
+    <Compile Include="Models\Sales.cs" />
+    <Compile Include="Models\Stock.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="RegistersScreens\Additional_Product_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistersScreens\Additional_Product_Screen.Designer.cs">
+      <DependentUpon>Additional_Product_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ColorSave.cs" />
+    <Compile Include="RegistersScreens\Brand_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistersScreens\Brand_Screen.Designer.cs">
+      <DependentUpon>Brand_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CreateDb.cs" />
+    <Compile Include="Data\DeleteDb.cs" />
+    <Compile Include="Data\InsertDb.cs" />
+    <Compile Include="Data\SelectDb.cs" />
+    <Compile Include="Data\UpdateDb.cs" />
+    <Compile Include="Models\Barcode.cs" />
+    <Compile Include="Models\Batch.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Home_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_Screen.Designer.cs">
+      <DependentUpon>Home_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\UnitM.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistersScreens\Category_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistersScreens\Category_Screen.Designer.cs">
+      <DependentUpon>Category_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistersScreens\Product_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistersScreens\Product_Screen.Designer.cs">
+      <DependentUpon>Product_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistersScreens\UnitM_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistersScreens\UnitM_Screen.Designer.cs">
+      <DependentUpon>UnitM_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistersScreens\User_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistersScreens\User_Screen.Designer.cs">
+      <DependentUpon>User_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Relat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales_Relat.Designer.cs">
+      <DependentUpon>Sales_Relat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales_Screen.Designer.cs">
+      <DependentUpon>Sales_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search_Product_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Product_Screen.Designer.cs">
+      <DependentUpon>Search_Product_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search_Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Sales.Designer.cs">
+      <DependentUpon>Search_Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Screen.Designer.cs">
+      <DependentUpon>Search_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistersScreens\Supplier_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistersScreens\Supplier_Screen.Designer.cs">
+      <DependentUpon>Supplier_Screen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Inventory_Screen.resx">
+      <DependentUpon>Inventory_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistersScreens\Additional_Product_Screen.resx">
+      <DependentUpon>Additional_Product_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistersScreens\Brand_Screen.resx">
+      <DependentUpon>Brand_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistersScreens\Category_Screen.resx">
+      <DependentUpon>Category_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home_Screen.resx">
+      <DependentUpon>Home_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegistersScreens\Product_Screen.resx">
+      <DependentUpon>Product_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistersScreens\UnitM_Screen.resx">
+      <DependentUpon>UnitM_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistersScreens\User_Screen.resx">
+      <DependentUpon>User_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales_Relat.resx">
+      <DependentUpon>Sales_Relat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales_Screen.resx">
+      <DependentUpon>Sales_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Product_Screen.resx">
+      <DependentUpon>Search_Product_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Sales.resx">
+      <DependentUpon>Search_Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Screen.resx">
+      <DependentUpon>Search_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistersScreens\Supplier_Screen.resx">
+      <DependentUpon>Supplier_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="estoque-pronto.ico" />
+    <None Include="img\Icones\lessIcon.png" />
+    <None Include="img\Bordas\Borda_1.png" />
+    <None Include="img\Bordas\BordaVerti1.png" />
+    <None Include="img\Bordas\BordaVert1.png" />
+    <None Include="img\Icones\addIcon.png" />
+    <None Include="img\Icones\add.png" />
+    <None Include="img\Icones\searchIcon.png" />
+    <None Include="img\Icones\search.png" />
+    <None Include="img\Bordas\BordaHori1.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

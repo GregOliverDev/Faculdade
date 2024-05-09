@@ -1,0 +1,3 @@
+      --Para abrir o Programa--
+1º - Abrir pasta "Software".
+2º - Executar "StockController.exe".

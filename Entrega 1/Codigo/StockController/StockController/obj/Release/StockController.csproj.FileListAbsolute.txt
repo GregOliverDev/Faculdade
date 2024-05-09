@@ -1,0 +1,13 @@
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\obj\Release\StockController.csproj.AssemblyReference.cache
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\obj\Release\StockController.Tela_Inicial.resources
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\obj\Release\StockController.Properties.Resources.resources
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\obj\Release\StockController.Screen_Product.resources
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\obj\Release\StockController.csproj.GenerateResource.cache
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\obj\Release\StockController.csproj.CoreCompileInputs.cache
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\bin\Release\StockController.exe.config
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\bin\Release\StockController.exe
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\bin\Release\StockController.pdb
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\bin\Release\System.Data.SQLite.dll
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\obj\Release\StockController.csproj.CopyComplete
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\obj\Release\StockController.exe
+D:\Estudo\Maneger\Modelos\Project\StockController\StockController\obj\Release\StockController.pdb
