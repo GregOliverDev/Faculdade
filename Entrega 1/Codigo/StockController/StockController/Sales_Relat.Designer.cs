@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Relat));
             this.bt_Export = new System.Windows.Forms.Button();
-            this.bt_Impri = new System.Windows.Forms.Button();
             this.tb_Filter1 = new System.Windows.Forms.TextBox();
             this.lb_Sum = new System.Windows.Forms.Label();
             this.tb_Filter2 = new System.Windows.Forms.TextBox();
@@ -44,22 +43,12 @@
             // bt_Export
             // 
             this.bt_Export.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Export.Location = new System.Drawing.Point(390, 49);
+            this.bt_Export.Location = new System.Drawing.Point(338, 37);
             this.bt_Export.Name = "bt_Export";
             this.bt_Export.Size = new System.Drawing.Size(138, 27);
             this.bt_Export.TabIndex = 51;
             this.bt_Export.Text = "Exportar Dados";
             this.bt_Export.UseVisualStyleBackColor = true;
-            // 
-            // bt_Impri
-            // 
-            this.bt_Impri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Impri.Location = new System.Drawing.Point(390, 80);
-            this.bt_Impri.Name = "bt_Impri";
-            this.bt_Impri.Size = new System.Drawing.Size(138, 27);
-            this.bt_Impri.TabIndex = 52;
-            this.bt_Impri.Text = "Imprimir ";
-            this.bt_Impri.UseVisualStyleBackColor = true;
             // 
             // tb_Filter1
             // 
@@ -141,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 119);
+            this.ClientSize = new System.Drawing.Size(488, 99);
             this.Controls.Add(this.lb_Client);
             this.Controls.Add(this.tb_Filter3);
             this.Controls.Add(this.label2);
@@ -150,7 +139,6 @@
             this.Controls.Add(this.tb_Filter1);
             this.Controls.Add(this.lb_Sum);
             this.Controls.Add(this.tb_Filter2);
-            this.Controls.Add(this.bt_Impri);
             this.Controls.Add(this.bt_Export);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -166,7 +154,6 @@
         #endregion
 
         private System.Windows.Forms.Button bt_Export;
-        private System.Windows.Forms.Button bt_Impri;
         private System.Windows.Forms.TextBox tb_Filter1;
         private System.Windows.Forms.Label lb_Sum;
         private System.Windows.Forms.TextBox tb_Filter2;

@@ -32,6 +32,10 @@ namespace StockController
             pb_Borda_Hori_2.BackColor = colorSecond;
             pb_Borda_Vert_1.BackColor = colorBack;
             lb_Status_Supplier.BackColor = colorSecond;
+            ts_Search_Code.MaxLength = 10;
+            tb_Name_Supplier.MaxLength = 50;
+            tb_CorporateReason.MaxLength = 50;
+            tb_Obs_Supplier.MaxLength = 200;
 
             tb_CpfCnpj.KeyPress += tb_CpfCnpj_KeyPress;
 
@@ -166,7 +170,6 @@ namespace StockController
 
             if (cod <= 0)
             {
-                MessageBox.Show("Digite um codigo valido", "Aviso", MessageBoxButtons.OK);
                 bt_Cancel_Click(sender, e);
             }
             else

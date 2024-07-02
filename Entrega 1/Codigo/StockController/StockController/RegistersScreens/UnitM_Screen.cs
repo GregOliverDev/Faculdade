@@ -31,6 +31,10 @@ namespace StockController
             pb_Borda_Hori_1.BackColor = colorBack;
             pb_Borda_Hori_2.BackColor = colorSecond;
             pb_Borda_Vert_1.BackColor = colorBack;
+            ts_Search_Code.MaxLength = 10;
+            tb_Acronym.MaxLength = 5;
+            tb_DecimalPlaces.MaxLength = 1;
+            tb_Name_UnitM.MaxLength = 25;
 
             #region buttonFlat
             foreach (Control control in Controls)
@@ -96,7 +100,6 @@ namespace StockController
 
             if (cod <= 0)
             {
-                MessageBox.Show("Digite um codigo valido", "Aviso", MessageBoxButtons.OK);
                 bt_Cancel_Click(sender, e);
             }
             else
@@ -144,23 +147,46 @@ namespace StockController
         {
             UnitM unitM = new UnitM();
             unitM.Id = int.Parse(ts_Search_Code.Text);
-            unitM.Acronym = tb_Acronym.Text;
-            unitM.DecimalPlaces = int.Parse(tb_DecimalPlaces.Text);
-            unitM.Name = tb_Name_UnitM.Text;
 
-            if (controlIG == "Insert")
+            if (string.IsNullOrEmpty(tb_Name_UnitM.Text))
             {
-                InsertDb.InsertUnitM(unitM);
-                bt_Cancel_Click(sender, e);
-                MessageBox.Show("Unidade de medida cadastrada com Sucesso", "Aviso", MessageBoxButtons.OK);
-
+                MessageBox.Show("Preencha o campo Nome", "Aviso", MessageBoxButtons.OK);
             }
-            else if (controlIG == "Update")
+            else
             {
-                UpdateDb.UpdateUnitM(unitM);
-                bt_Cancel_Click(sender, e);
-                MessageBox.Show("Unidade de medida atualizada com Sucesso", "Aviso", MessageBoxButtons.OK);
+                if (string.IsNullOrEmpty(tb_Acronym.Text))
+                {
+                    MessageBox.Show("Preencha o campo Sigla", "Aviso", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(tb_DecimalPlaces.Text))
+                    {
+                        MessageBox.Show("Preencha o campo Casas Decimais", "Aviso", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        unitM.Acronym = tb_Acronym.Text;
+                        unitM.Name = tb_Name_UnitM.Text;
+                        unitM.DecimalPlaces = int.Parse(tb_DecimalPlaces.Text);
 
+
+                        if (controlIG == "Insert")
+                        {
+                            InsertDb.InsertUnitM(unitM);
+                            bt_Cancel_Click(sender, e);
+                            MessageBox.Show("Unidade de medida cadastrada com Sucesso", "Aviso", MessageBoxButtons.OK);
+
+                        }
+                        else if (controlIG == "Update")
+                        {
+                            UpdateDb.UpdateUnitM(unitM);
+                            bt_Cancel_Click(sender, e);
+                            MessageBox.Show("Unidade de medida atualizada com Sucesso", "Aviso", MessageBoxButtons.OK);
+
+                        }
+                    }
+                }
             }
         }
 

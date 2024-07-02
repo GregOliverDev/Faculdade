@@ -22,6 +22,8 @@ namespace StockController
 
             this.BackColor = colorBack;
             bt_Enter.BackColor = colorSecond;
+            tb_Name.MaxLength = 10;
+            tb_Pass.MaxLength = 10;
 
             #region buttonFlat
             foreach (Control control in Controls)

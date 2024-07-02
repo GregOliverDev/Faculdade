@@ -29,6 +29,7 @@ namespace StockController
             pb_Borda_Hori_1.BackColor = colorBack;
             pb_Borda_Hori_2.BackColor = colorSecond;
             pb_Borda_Vert_1.BackColor = colorBack;
+            ts_Search_Code.MaxLength = 10;
 
             #region buttonFlat
             foreach (Control control in Controls)
@@ -125,7 +126,6 @@ namespace StockController
 
             if (cod <= 0)
             {
-                MessageBox.Show("Digite um codigo valido", "Aviso", MessageBoxButtons.OK);
                 tb_Descri_Category.Enabled = false;
                 bt_Save.Enabled = false;
                 bt_Cancel.Enabled = false;

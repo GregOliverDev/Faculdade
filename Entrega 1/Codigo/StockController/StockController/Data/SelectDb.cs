@@ -306,6 +306,7 @@ namespace StockController.Data
                             product.Id = Convert.ToInt32(reader["Id"]);
                             product.IdCategory = Convert.ToInt32(reader["IdCategory"]);
                             product.IdBrand = Convert.ToInt32(reader["IdBrand"]);
+                            product.IdUnitM = Convert.ToInt32(reader["IdUnitM"]);
                             product.Code = Convert.ToInt32(reader["Code"]);
                             product.Description = reader["Description"].ToString();
                             product.Name = reader["Name"].ToString();
@@ -1110,7 +1111,7 @@ namespace StockController.Data
         }
 
         // select all items from barcodes
-        public static DataTable SelectBarcodeAll()
+        public static DataTable SelectBarcodeAll(int idProductCurrent)
         {
             DataTable dataTable = new DataTable();
             string baseDados = Application.StartupPath + @"\db\DBSQLite.db";
@@ -1120,7 +1121,7 @@ namespace StockController.Data
 
             try
             {
-                string query = "SELECT * FROM barcodes";
+                string query = "SELECT * FROM barcodes WHERE IdProduct = '"+idProductCurrent+"'";
 
                 SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, strConection);
 
@@ -1141,7 +1142,7 @@ namespace StockController.Data
         }
 
         // select all items from batches
-        public static DataTable SelectBatchAll()
+        public static DataTable SelectBatchAll(int idProductCurrent)
         {
             DataTable dataTable = new DataTable();
             string baseDados = Application.StartupPath + @"\db\DBSQLite.db";
@@ -1151,7 +1152,7 @@ namespace StockController.Data
 
             try
             {
-                string query = "SELECT * FROM batches";
+                string query = "SELECT * FROM batches WHERE IdProduct = '"+idProductCurrent+"'";
 
                 SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, strConection);
 
@@ -1172,7 +1173,7 @@ namespace StockController.Data
         }
 
         // select all items from codesSuppliers
-        public static DataTable SelectCodesSuppliersAll()
+        public static DataTable SelectCodesSuppliersAll(int idProductCurrent)
         {
             DataTable dataTable = new DataTable();
             string baseDados = Application.StartupPath + @"\db\DBSQLite.db";
@@ -1182,7 +1183,7 @@ namespace StockController.Data
 
             try
             {
-                string query = "SELECT * FROM codesSuppliers";
+                string query = "SELECT * FROM codesSuppliers WHERE IdProduct = '"+idProductCurrent+"'";
 
                 SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, strConection);
 

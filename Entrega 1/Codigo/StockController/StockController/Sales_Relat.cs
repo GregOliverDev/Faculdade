@@ -18,7 +18,10 @@ namespace StockController
             this.BackColor = colorBack;
             bt_Export.BackColor = colorSecond;
             bt_Impri.BackColor = colorSecond;
-
+            tb_Filter1.MaxLength = 15;
+            tb_Filter2.MaxLength = 15;
+            tb_Filter3.MaxLength = 50;
+            tb_Filter4.MaxLength = 50;
 
             #region buttonFlat
             foreach (Control control in Controls)

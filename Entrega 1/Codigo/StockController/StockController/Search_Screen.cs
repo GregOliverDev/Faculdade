@@ -1,5 +1,6 @@
 ﻿using StockController.Data;
 using StockController.Models;
+using StockController.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -199,6 +200,27 @@ namespace StockController
                 bt_Search_Click(sender, e);
                 controlDgv = 1;
             }
+        }
+
+        private void bt_Export_Click(object sender, EventArgs e)
+        {
+            if (strTypeSearch == "Brand")
+            {
+                ExportExcel.ExportDataGridViewToExcel(dgv_Search);
+            }
+            else if (strTypeSearch == "Category")
+            {
+                ExportExcel.ExportDataGridViewToExcel(dgv_Search);
+            }
+            else if (strTypeSearch == "Supplier")
+            {
+                ExportExcel.ExportDataGridViewToExcel(dgv_Supplier);
+            }
+            else if (strTypeSearch == "UnitM")
+            {
+                ExportExcel.ExportDataGridViewToExcel(dgv_UnitMs);
+            }
+           
         }
 
         private void bt_Select_Click(object sender, EventArgs e)

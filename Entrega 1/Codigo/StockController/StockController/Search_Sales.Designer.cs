@@ -45,10 +45,10 @@
             this.sp_Choices = new System.Windows.Forms.Splitter();
             this.pb_Borda_Hori_1 = new System.Windows.Forms.PictureBox();
             this.dgv_Search = new System.Windows.Forms.DataGridView();
-            this.sp_Menu = new System.Windows.Forms.Splitter();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Origin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sp_Menu = new System.Windows.Forms.Splitter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Cube_Transparent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Borda_Vert_1)).BeginInit();
@@ -66,6 +66,7 @@
             this.bt_Export.TabIndex = 68;
             this.bt_Export.Text = "Exportar Dados";
             this.bt_Export.UseVisualStyleBackColor = true;
+            this.bt_Export.Click += new System.EventHandler(this.bt_Export_Click);
             // 
             // bt_Cancel
             // 
@@ -227,16 +228,6 @@
             this.dgv_Search.Size = new System.Drawing.Size(575, 341);
             this.dgv_Search.TabIndex = 67;
             // 
-            // sp_Menu
-            // 
-            this.sp_Menu.BackColor = System.Drawing.Color.White;
-            this.sp_Menu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sp_Menu.Location = new System.Drawing.Point(0, 0);
-            this.sp_Menu.Name = "sp_Menu";
-            this.sp_Menu.Size = new System.Drawing.Size(784, 83);
-            this.sp_Menu.TabIndex = 69;
-            this.sp_Menu.TabStop = false;
-            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
@@ -255,6 +246,16 @@
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
+            // 
+            // sp_Menu
+            // 
+            this.sp_Menu.BackColor = System.Drawing.Color.White;
+            this.sp_Menu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sp_Menu.Location = new System.Drawing.Point(0, 0);
+            this.sp_Menu.Name = "sp_Menu";
+            this.sp_Menu.Size = new System.Drawing.Size(784, 83);
+            this.sp_Menu.TabIndex = 69;
+            this.sp_Menu.TabStop = false;
             // 
             // Search_Sales
             // 

@@ -56,7 +56,7 @@
             // 
             this.tb_Name_UnitM.Enabled = false;
             this.tb_Name_UnitM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Name_UnitM.Location = new System.Drawing.Point(66, 46);
+            this.tb_Name_UnitM.Location = new System.Drawing.Point(75, 64);
             this.tb_Name_UnitM.Name = "tb_Name_UnitM";
             this.tb_Name_UnitM.Size = new System.Drawing.Size(371, 26);
             this.tb_Name_UnitM.TabIndex = 51;
@@ -65,7 +65,7 @@
             // 
             this.lb_Name_UnitM.AutoSize = true;
             this.lb_Name_UnitM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Name_UnitM.Location = new System.Drawing.Point(12, 49);
+            this.lb_Name_UnitM.Location = new System.Drawing.Point(21, 67);
             this.lb_Name_UnitM.Name = "lb_Name_UnitM";
             this.lb_Name_UnitM.Size = new System.Drawing.Size(55, 20);
             this.lb_Name_UnitM.TabIndex = 50;
@@ -76,7 +76,7 @@
             this.lb_Acronym.AutoSize = true;
             this.lb_Acronym.BackColor = System.Drawing.Color.Transparent;
             this.lb_Acronym.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Acronym.Location = new System.Drawing.Point(12, 86);
+            this.lb_Acronym.Location = new System.Drawing.Point(21, 104);
             this.lb_Acronym.Name = "lb_Acronym";
             this.lb_Acronym.Size = new System.Drawing.Size(48, 20);
             this.lb_Acronym.TabIndex = 49;
@@ -125,7 +125,7 @@
             // 
             this.bt_Delete.Enabled = false;
             this.bt_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Delete.Location = new System.Drawing.Point(522, 139);
+            this.bt_Delete.Location = new System.Drawing.Point(522, 112);
             this.bt_Delete.Name = "bt_Delete";
             this.bt_Delete.Size = new System.Drawing.Size(138, 27);
             this.bt_Delete.TabIndex = 46;
@@ -137,7 +137,7 @@
             // 
             this.bt_Cancel.Enabled = false;
             this.bt_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Cancel.Location = new System.Drawing.Point(522, 106);
+            this.bt_Cancel.Location = new System.Drawing.Point(522, 79);
             this.bt_Cancel.Name = "bt_Cancel";
             this.bt_Cancel.Size = new System.Drawing.Size(138, 27);
             this.bt_Cancel.TabIndex = 45;
@@ -149,7 +149,7 @@
             // 
             this.bt_Save.Enabled = false;
             this.bt_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Save.Location = new System.Drawing.Point(522, 73);
+            this.bt_Save.Location = new System.Drawing.Point(522, 46);
             this.bt_Save.Name = "bt_Save";
             this.bt_Save.Size = new System.Drawing.Size(138, 27);
             this.bt_Save.TabIndex = 44;
@@ -163,7 +163,7 @@
             this.sp_Choices.Dock = System.Windows.Forms.DockStyle.Right;
             this.sp_Choices.Location = new System.Drawing.Point(498, 0);
             this.sp_Choices.Name = "sp_Choices";
-            this.sp_Choices.Size = new System.Drawing.Size(174, 192);
+            this.sp_Choices.Size = new System.Drawing.Size(174, 161);
             this.sp_Choices.TabIndex = 43;
             this.sp_Choices.TabStop = false;
             // 
@@ -200,16 +200,16 @@
             // 
             this.tb_Acronym.Enabled = false;
             this.tb_Acronym.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Acronym.Location = new System.Drawing.Point(66, 83);
+            this.tb_Acronym.Location = new System.Drawing.Point(75, 101);
             this.tb_Acronym.Name = "tb_Acronym";
-            this.tb_Acronym.Size = new System.Drawing.Size(67, 26);
+            this.tb_Acronym.Size = new System.Drawing.Size(155, 26);
             this.tb_Acronym.TabIndex = 55;
             // 
             // tb_DecimalPlaces
             // 
             this.tb_DecimalPlaces.Enabled = false;
             this.tb_DecimalPlaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DecimalPlaces.Location = new System.Drawing.Point(291, 83);
+            this.tb_DecimalPlaces.Location = new System.Drawing.Point(379, 101);
             this.tb_DecimalPlaces.Name = "tb_DecimalPlaces";
             this.tb_DecimalPlaces.Size = new System.Drawing.Size(67, 26);
             this.tb_DecimalPlaces.TabIndex = 57;
@@ -220,7 +220,7 @@
             this.lb_DecimalPlaces.AutoSize = true;
             this.lb_DecimalPlaces.BackColor = System.Drawing.Color.Transparent;
             this.lb_DecimalPlaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DecimalPlaces.Location = new System.Drawing.Point(158, 86);
+            this.lb_DecimalPlaces.Location = new System.Drawing.Point(236, 104);
             this.lb_DecimalPlaces.Name = "lb_DecimalPlaces";
             this.lb_DecimalPlaces.Size = new System.Drawing.Size(127, 20);
             this.lb_DecimalPlaces.TabIndex = 56;
@@ -231,7 +231,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(672, 192);
+            this.ClientSize = new System.Drawing.Size(672, 161);
             this.Controls.Add(this.tb_DecimalPlaces);
             this.Controls.Add(this.lb_DecimalPlaces);
             this.Controls.Add(this.tb_Acronym);

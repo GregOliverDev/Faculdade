@@ -30,7 +30,9 @@ namespace StockController.RegistersScreens
             pb_Borda_Hori_1.BackColor = colorBack;
             pb_Borda_Hori_2.BackColor = colorSecond;
             pb_Borda_Vert_1.BackColor = colorBack;
-
+            tb_Type.MaxLength = 1;
+            ts_Search_Code.MaxLength = 10;
+            tb_Pass.MaxLength = 10;
 
             #region buttonFlat
             foreach (Control control in Controls)
@@ -51,8 +53,6 @@ namespace StockController.RegistersScreens
 
         private void bt_Cancel_Click(object sender, EventArgs e)
         {
-            tb_Name.Enabled = false;
-            tb_Name.Text = "";
             tb_Pass.Enabled = false;
             tb_Pass.Text = "";
             tb_Type.Enabled = false;
@@ -61,6 +61,7 @@ namespace StockController.RegistersScreens
             bt_Save.Enabled = false;
             bt_Cancel.Enabled = false;
             bt_Delete.Enabled = false;
+            bt_Ask.Enabled = false;
             ts_Search_Code.Enabled = true;
             controlIG = "";
 
@@ -71,23 +72,28 @@ namespace StockController.RegistersScreens
         {
             User user = new User();
             user.Name = ts_Search_Code.Text;
-            user.Name = tb_Name.Text;
             user.Password = tb_Pass.Text;
-            user.Type = Convert.ToInt32(tb_Type.Text);
-
-            if (controlIG == "Insert")
+            
+            string typeStr = tb_Type.Text;
+            if (string.IsNullOrEmpty(typeStr))
             {
-                InsertDb.InsertUser(user);
-                bt_Cancel_Click(sender, e);
-                MessageBox.Show("Usuário cadastrado com Sucesso", "Aviso", MessageBoxButtons.OK);
-
+                MessageBox.Show("Preencha o campo tipo", "Aviso", MessageBoxButtons.OK);
             }
-            else if (controlIG == "Update")
+            else
             {
-                UpdateDb.UpdateUser(user);
-                bt_Cancel_Click(sender, e);
-                MessageBox.Show("Usuário atualizada com Sucesso", "Aviso", MessageBoxButtons.OK);
-
+                user.Type = Convert.ToInt32(tb_Type.Text);
+                if (controlIG == "Insert")
+                {
+                    InsertDb.InsertUser(user);
+                    bt_Cancel_Click(sender, e);
+                    MessageBox.Show("Usuário cadastrado com Sucesso", "Aviso", MessageBoxButtons.OK);
+                }
+                else if (controlIG == "Update")
+                {
+                    UpdateDb.UpdateUser(user);
+                    bt_Cancel_Click(sender, e);
+                    MessageBox.Show("Usuário atualizado com Sucesso", "Aviso", MessageBoxButtons.OK);
+                }
             }
         }
 
@@ -95,7 +101,7 @@ namespace StockController.RegistersScreens
         {
             if (controlIG == "Insert")
             {
-                MessageBox.Show("Usuário não cadastrada.");
+                MessageBox.Show("Usuário não cadastrado.");
             }
             else
             {
@@ -112,9 +118,9 @@ namespace StockController.RegistersScreens
         {
             string codString = ts_Search_Code.Text;
 
-            if (codString == "")
+            if (codString == "" || codString == "dev" || codString == "DEV")
             {
-                MessageBox.Show("Digite um nome valido", "Aviso", MessageBoxButtons.OK);
+                MessageBox.Show("Digite um nome valido e diferente do usuário Dev", "Aviso", MessageBoxButtons.OK);
                 bt_Cancel_Click(sender, e);
             }
             else
@@ -123,10 +129,10 @@ namespace StockController.RegistersScreens
                 user = SelectDb.selectUser(ts_Search_Code.Text);
                 if (user.Id == 0)
                 {
-                    tb_Name.Enabled = true;
                     tb_Pass.Enabled = true;
                     tb_Type.Enabled = true;
                     bt_Save.Enabled = true;
+                    bt_Ask.Enabled = true;
                     bt_Cancel.Enabled = true;
                     bt_Delete.Enabled = true;
                     ts_Search_Code.Enabled = false;
@@ -135,8 +141,6 @@ namespace StockController.RegistersScreens
                 }
                 else
                 {
-                    tb_Name.Enabled = true;
-                    tb_Name.Text = user.Name;
                     tb_Pass.Enabled = true;
                     tb_Pass.Text = user.Password;
                     tb_Type.Enabled = true;
@@ -145,10 +149,24 @@ namespace StockController.RegistersScreens
                     bt_Save.Enabled = true;
                     bt_Cancel.Enabled = true;
                     bt_Delete.Enabled = true;
+                    bt_Ask.Enabled = true;
                     ts_Search_Code.Enabled = false;
 
                     controlIG = "Update";
                 }
+            }
+        }
+
+        private void bt_Ask_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1 - Usuário Vendedor \n2 - Usuário Estoque \n3 - Usuário Gerente", "Aviso", MessageBoxButtons.OK);
+        }
+
+        private void ts_Search_Code_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '1' && e.KeyChar != '2' && e.KeyChar != '3' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

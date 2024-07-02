@@ -34,27 +34,26 @@
             this.bt_Save = new System.Windows.Forms.Button();
             this.menu_User = new System.Windows.Forms.MenuStrip();
             this.ts_Search_Code = new System.Windows.Forms.ToolStripTextBox();
-            this.pb_Borda_Hori_1 = new System.Windows.Forms.PictureBox();
-            this.pb_Borda_Vert_1 = new System.Windows.Forms.PictureBox();
-            this.pb_Borda_Hori_2 = new System.Windows.Forms.PictureBox();
             this.sp_Choices = new System.Windows.Forms.Splitter();
             this.lb_Pass = new System.Windows.Forms.Label();
-            this.lb_User_Name = new System.Windows.Forms.Label();
             this.tb_Pass = new System.Windows.Forms.TextBox();
-            this.tb_Name = new System.Windows.Forms.TextBox();
             this.lb_Type = new System.Windows.Forms.Label();
             this.tb_Type = new System.Windows.Forms.TextBox();
+            this.bt_Ask = new System.Windows.Forms.Button();
+            this.pb_Borda_Vert_1 = new System.Windows.Forms.PictureBox();
+            this.pb_Borda_Hori_2 = new System.Windows.Forms.PictureBox();
+            this.pb_Borda_Hori_1 = new System.Windows.Forms.PictureBox();
             this.menu_User.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Borda_Hori_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Borda_Vert_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Borda_Hori_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Borda_Hori_1)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_Delete
             // 
             this.bt_Delete.Enabled = false;
             this.bt_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Delete.Location = new System.Drawing.Point(392, 171);
+            this.bt_Delete.Location = new System.Drawing.Point(391, 114);
             this.bt_Delete.Name = "bt_Delete";
             this.bt_Delete.Size = new System.Drawing.Size(138, 27);
             this.bt_Delete.TabIndex = 51;
@@ -66,7 +65,7 @@
             // 
             this.bt_Cancel.Enabled = false;
             this.bt_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Cancel.Location = new System.Drawing.Point(392, 138);
+            this.bt_Cancel.Location = new System.Drawing.Point(391, 81);
             this.bt_Cancel.Name = "bt_Cancel";
             this.bt_Cancel.Size = new System.Drawing.Size(138, 27);
             this.bt_Cancel.TabIndex = 50;
@@ -78,7 +77,7 @@
             // 
             this.bt_Save.Enabled = false;
             this.bt_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Save.Location = new System.Drawing.Point(392, 105);
+            this.bt_Save.Location = new System.Drawing.Point(391, 48);
             this.bt_Save.Name = "bt_Save";
             this.bt_Save.Size = new System.Drawing.Size(138, 27);
             this.bt_Save.TabIndex = 49;
@@ -103,14 +102,69 @@
             this.ts_Search_Code.Size = new System.Drawing.Size(100, 23);
             this.ts_Search_Code.Leave += new System.EventHandler(this.ts_Search_Code_Leave);
             // 
-            // pb_Borda_Hori_1
+            // sp_Choices
             // 
-            this.pb_Borda_Hori_1.Image = global::StockController.Properties.Resources.BordaHori1;
-            this.pb_Borda_Hori_1.Location = new System.Drawing.Point(0, 9);
-            this.pb_Borda_Hori_1.Name = "pb_Borda_Hori_1";
-            this.pb_Borda_Hori_1.Size = new System.Drawing.Size(380, 25);
-            this.pb_Borda_Hori_1.TabIndex = 56;
-            this.pb_Borda_Hori_1.TabStop = false;
+            this.sp_Choices.BackColor = System.Drawing.Color.White;
+            this.sp_Choices.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sp_Choices.Location = new System.Drawing.Point(373, 0);
+            this.sp_Choices.Name = "sp_Choices";
+            this.sp_Choices.Size = new System.Drawing.Size(168, 157);
+            this.sp_Choices.TabIndex = 57;
+            this.sp_Choices.TabStop = false;
+            // 
+            // lb_Pass
+            // 
+            this.lb_Pass.AutoSize = true;
+            this.lb_Pass.BackColor = System.Drawing.Color.Transparent;
+            this.lb_Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Pass.Location = new System.Drawing.Point(15, 60);
+            this.lb_Pass.Name = "lb_Pass";
+            this.lb_Pass.Size = new System.Drawing.Size(60, 20);
+            this.lb_Pass.TabIndex = 64;
+            this.lb_Pass.Text = "Senha:";
+            // 
+            // tb_Pass
+            // 
+            this.tb_Pass.Enabled = false;
+            this.tb_Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Pass.Location = new System.Drawing.Point(93, 60);
+            this.tb_Pass.Name = "tb_Pass";
+            this.tb_Pass.PasswordChar = '*';
+            this.tb_Pass.Size = new System.Drawing.Size(204, 26);
+            this.tb_Pass.TabIndex = 62;
+            // 
+            // lb_Type
+            // 
+            this.lb_Type.AutoSize = true;
+            this.lb_Type.BackColor = System.Drawing.Color.Transparent;
+            this.lb_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Type.Location = new System.Drawing.Point(15, 106);
+            this.lb_Type.Name = "lb_Type";
+            this.lb_Type.Size = new System.Drawing.Size(43, 20);
+            this.lb_Type.TabIndex = 66;
+            this.lb_Type.Text = "Tipo:";
+            // 
+            // tb_Type
+            // 
+            this.tb_Type.Enabled = false;
+            this.tb_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Type.Location = new System.Drawing.Point(93, 106);
+            this.tb_Type.Name = "tb_Type";
+            this.tb_Type.Size = new System.Drawing.Size(204, 26);
+            this.tb_Type.TabIndex = 65;
+            this.tb_Type.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ts_Search_Code_KeyPress);
+            // 
+            // bt_Ask
+            // 
+            this.bt_Ask.Enabled = false;
+            this.bt_Ask.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Ask.Image = global::StockController.Properties.Resources.ask;
+            this.bt_Ask.Location = new System.Drawing.Point(303, 106);
+            this.bt_Ask.Name = "bt_Ask";
+            this.bt_Ask.Size = new System.Drawing.Size(29, 27);
+            this.bt_Ask.TabIndex = 67;
+            this.bt_Ask.UseVisualStyleBackColor = true;
+            this.bt_Ask.Click += new System.EventHandler(this.bt_Ask_Click);
             // 
             // pb_Borda_Vert_1
             // 
@@ -132,91 +186,28 @@
             this.pb_Borda_Hori_2.TabIndex = 58;
             this.pb_Borda_Hori_2.TabStop = false;
             // 
-            // sp_Choices
+            // pb_Borda_Hori_1
             // 
-            this.sp_Choices.BackColor = System.Drawing.Color.White;
-            this.sp_Choices.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sp_Choices.Location = new System.Drawing.Point(373, 0);
-            this.sp_Choices.Name = "sp_Choices";
-            this.sp_Choices.Size = new System.Drawing.Size(168, 213);
-            this.sp_Choices.TabIndex = 57;
-            this.sp_Choices.TabStop = false;
-            // 
-            // lb_Pass
-            // 
-            this.lb_Pass.AutoSize = true;
-            this.lb_Pass.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Pass.Location = new System.Drawing.Point(16, 109);
-            this.lb_Pass.Name = "lb_Pass";
-            this.lb_Pass.Size = new System.Drawing.Size(60, 20);
-            this.lb_Pass.TabIndex = 64;
-            this.lb_Pass.Text = "Senha:";
-            // 
-            // lb_User_Name
-            // 
-            this.lb_User_Name.AutoSize = true;
-            this.lb_User_Name.BackColor = System.Drawing.Color.Transparent;
-            this.lb_User_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_User_Name.Location = new System.Drawing.Point(16, 63);
-            this.lb_User_Name.Name = "lb_User_Name";
-            this.lb_User_Name.Size = new System.Drawing.Size(72, 20);
-            this.lb_User_Name.TabIndex = 63;
-            this.lb_User_Name.Text = "Usuário: ";
-            // 
-            // tb_Pass
-            // 
-            this.tb_Pass.Enabled = false;
-            this.tb_Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Pass.Location = new System.Drawing.Point(94, 109);
-            this.tb_Pass.Name = "tb_Pass";
-            this.tb_Pass.PasswordChar = '*';
-            this.tb_Pass.Size = new System.Drawing.Size(204, 26);
-            this.tb_Pass.TabIndex = 62;
-            // 
-            // tb_Name
-            // 
-            this.tb_Name.Enabled = false;
-            this.tb_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Name.Location = new System.Drawing.Point(94, 63);
-            this.tb_Name.Name = "tb_Name";
-            this.tb_Name.Size = new System.Drawing.Size(204, 26);
-            this.tb_Name.TabIndex = 61;
-            // 
-            // lb_Type
-            // 
-            this.lb_Type.AutoSize = true;
-            this.lb_Type.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Type.Location = new System.Drawing.Point(16, 155);
-            this.lb_Type.Name = "lb_Type";
-            this.lb_Type.Size = new System.Drawing.Size(43, 20);
-            this.lb_Type.TabIndex = 66;
-            this.lb_Type.Text = "Tipo:";
-            // 
-            // tb_Type
-            // 
-            this.tb_Type.Enabled = false;
-            this.tb_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Type.Location = new System.Drawing.Point(94, 155);
-            this.tb_Type.Name = "tb_Type";
-            this.tb_Type.Size = new System.Drawing.Size(204, 26);
-            this.tb_Type.TabIndex = 65;
+            this.pb_Borda_Hori_1.Image = global::StockController.Properties.Resources.BordaHori1;
+            this.pb_Borda_Hori_1.Location = new System.Drawing.Point(0, 9);
+            this.pb_Borda_Hori_1.Name = "pb_Borda_Hori_1";
+            this.pb_Borda_Hori_1.Size = new System.Drawing.Size(380, 25);
+            this.pb_Borda_Hori_1.TabIndex = 56;
+            this.pb_Borda_Hori_1.TabStop = false;
             // 
             // User_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 213);
+            this.ClientSize = new System.Drawing.Size(541, 157);
+            this.Controls.Add(this.bt_Ask);
             this.Controls.Add(this.menu_User);
             this.Controls.Add(this.pb_Borda_Vert_1);
             this.Controls.Add(this.pb_Borda_Hori_2);
             this.Controls.Add(this.lb_Type);
             this.Controls.Add(this.tb_Type);
             this.Controls.Add(this.lb_Pass);
-            this.Controls.Add(this.lb_User_Name);
             this.Controls.Add(this.tb_Pass);
-            this.Controls.Add(this.tb_Name);
             this.Controls.Add(this.bt_Delete);
             this.Controls.Add(this.bt_Cancel);
             this.Controls.Add(this.bt_Save);
@@ -231,9 +222,9 @@
             this.Text = "Cadastro Usuário";
             this.menu_User.ResumeLayout(false);
             this.menu_User.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Borda_Hori_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Borda_Vert_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Borda_Hori_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Borda_Hori_1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,10 +241,9 @@
         private System.Windows.Forms.PictureBox pb_Borda_Hori_2;
         private System.Windows.Forms.Splitter sp_Choices;
         private System.Windows.Forms.Label lb_Pass;
-        private System.Windows.Forms.Label lb_User_Name;
         private System.Windows.Forms.TextBox tb_Pass;
-        private System.Windows.Forms.TextBox tb_Name;
         private System.Windows.Forms.Label lb_Type;
         private System.Windows.Forms.TextBox tb_Type;
+        private System.Windows.Forms.Button bt_Ask;
     }
 }

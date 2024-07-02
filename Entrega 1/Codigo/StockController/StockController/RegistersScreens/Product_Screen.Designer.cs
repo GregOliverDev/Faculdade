@@ -118,9 +118,9 @@
             // 
             this.tb_Category_Product.Enabled = false;
             this.tb_Category_Product.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Category_Product.Location = new System.Drawing.Point(104, 81);
+            this.tb_Category_Product.Location = new System.Drawing.Point(91, 81);
             this.tb_Category_Product.Name = "tb_Category_Product";
-            this.tb_Category_Product.Size = new System.Drawing.Size(94, 26);
+            this.tb_Category_Product.Size = new System.Drawing.Size(107, 26);
             this.tb_Category_Product.TabIndex = 7;
             this.tb_Category_Product.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_Category_Product.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ts_Search_Code_KeyPress);
@@ -145,6 +145,7 @@
             this.tb_Value_Product.Size = new System.Drawing.Size(107, 26);
             this.tb_Value_Product.TabIndex = 11;
             this.tb_Value_Product.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_Value_Product.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ts_Search_Code_KeyPressFloat);
             // 
             // lb_Value_Product
             // 
@@ -175,6 +176,7 @@
             this.tb_Cost_Product.Size = new System.Drawing.Size(117, 26);
             this.tb_Cost_Product.TabIndex = 13;
             this.tb_Cost_Product.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_Cost_Product.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ts_Search_Code_KeyPressFloat);
             // 
             // tb_Descri_Product
             // 
@@ -493,9 +495,9 @@
             // 
             this.tb_UnitM_Product.Enabled = false;
             this.tb_UnitM_Product.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_UnitM_Product.Location = new System.Drawing.Point(104, 145);
+            this.tb_UnitM_Product.Location = new System.Drawing.Point(91, 145);
             this.tb_UnitM_Product.Name = "tb_UnitM_Product";
-            this.tb_UnitM_Product.Size = new System.Drawing.Size(94, 26);
+            this.tb_UnitM_Product.Size = new System.Drawing.Size(107, 26);
             this.tb_UnitM_Product.TabIndex = 47;
             this.tb_UnitM_Product.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_UnitM_Product.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ts_Search_Code_KeyPress);

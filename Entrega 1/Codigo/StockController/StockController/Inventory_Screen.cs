@@ -26,6 +26,9 @@ namespace StockController
             this.BackColor = colorBack;
             bt_Cancel.BackColor = colorSecond;
             bt_Save.BackColor = colorSecond;
+            tb_Product.MaxLength = 15;
+            tb_New_Stock.MaxLength = 7;
+
             #region buttonFlat
             foreach (Control control in Controls)
             {

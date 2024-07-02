@@ -58,6 +58,9 @@ namespace StockController
                 dtp_Date2.Visible = false;
                 bt_Search_Supplier.Visible = false;
 
+                tb1.MaxLength = 13;
+                tb2.MaxLength = 13;
+
                 dgv_Search.Location = new System.Drawing.Point(12, 97);
                 dgv_Search.Size = new System.Drawing.Size(480, 238);
 
@@ -76,6 +79,9 @@ namespace StockController
                 lb_Code3.Text = "Data Fabricação:";
                 lb_Code4.Text = "Data Vencimento:";
                 bt_Search_Supplier.Visible = false;
+
+                tb1.MaxLength = 20;
+                tb2.MaxLength = 40;
 
                 dgv_Search.Columns["Cod2"].HeaderText = "Data de Vencimento";
                 dgv_Search.Columns["Cod3"].HeaderText = "Data de Fabricação";
@@ -97,6 +103,9 @@ namespace StockController
                 dtp_Date1.Visible = false;
                 dtp_Date2.Visible = false;
                 bt_Search_Supplier.Visible = true;
+
+                tb1.MaxLength = 10;
+                tb2.MaxLength = 30;
 
                 dgv_Search.Location = new System.Drawing.Point(12, 97);
                 dgv_Search.Size = new System.Drawing.Size(480, 238);
@@ -145,66 +154,108 @@ namespace StockController
         {
             if (controlForm == "Barcode")
             {
-                Barcode barcode = new Barcode();
-                barcode = SelectDb.SelectBarcode(0, 2);
-                int idCurrent = barcode.Id + 1;
-                barcode.Id = idCurrent;
-
-                barcode.IdProduct = idProductCurrent;
-                barcode.GtinEan = tb1.Text;
-                barcode.Bar128 = tb2.Text;
-
-                InsertDb.InsertBarcode(barcode);
-
-                tb1.Text = "";
-                tb2.Text = "";
-                attGrid();
-            }
-            else if (controlForm == "Batch")
-            {
-                Batch batch = new Batch();
-                batch = SelectDb.SelectBatch(0, 2);
-                int idCurrent = batch.Id + 1;
-                batch.Id = idCurrent;
-
-                batch.IdProduct = idProductCurrent;
-                batch.FabricationDate = dtp_Date1.Value;
-                batch.DueDate = dtp_Date2.Value;
-
-                if (tb1.Text == "")
+                if (string.IsNullOrEmpty(tb1.Text))
                 {
-                    batch.Number = 0;
+                    MessageBox.Show("Preencha o campo Gtin", "Aviso", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    batch.Number = Convert.ToInt32(tb1.Text);
+                    if (string.IsNullOrEmpty(tb2.Text))
+                    {
+                        MessageBox.Show("Preencha o campo 128", "Aviso", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        Barcode barcode = new Barcode();
+                        barcode = SelectDb.SelectBarcode(0, 2);
+                        int idCurrent = barcode.Id + 1;
+                        barcode.Id = idCurrent;
+
+                        barcode.IdProduct = idProductCurrent;
+                        barcode.GtinEan = tb1.Text;
+                        barcode.Bar128 = tb2.Text;
+
+                        InsertDb.InsertBarcode(barcode);
+
+                        tb1.Text = "";
+                        tb2.Text = "";
+                        attGrid();
+                    }
                 }
-                batch.Obsevation = tb2.Text;
+            }
+            else if (controlForm == "Batch")
+            {
+                if (string.IsNullOrEmpty(tb1.Text))
+                {
+                    MessageBox.Show("Preencha o campo Número", "Aviso", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(tb2.Text))
+                    {
+                        MessageBox.Show("Preencha o campo Observação", "Aviso", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        Batch batch = new Batch();
+                        batch = SelectDb.SelectBatch(0, 2);
+                        int idCurrent = batch.Id + 1;
+                        batch.Id = idCurrent;
 
-                InsertDb.InsertBatch(batch);
+                        batch.IdProduct = idProductCurrent;
+                        batch.FabricationDate = dtp_Date1.Value;
+                        batch.DueDate = dtp_Date2.Value;
 
-                tb1.Text = "";
-                tb2.Text = "";
-                dtp_Date1.Value = DateTime.Today;
-                dtp_Date2.Value = DateTime.Today;
-                attGrid();
+                        if (tb1.Text == "")
+                        {
+                            batch.Number = 0;
+                        }
+                        else
+                        {
+                            batch.Number = Convert.ToInt32(tb1.Text);
+                        }
+                        batch.Obsevation = tb2.Text;
+
+                        InsertDb.InsertBatch(batch);
+
+                        tb1.Text = "";
+                        tb2.Text = "";
+                        dtp_Date1.Value = DateTime.Today;
+                        dtp_Date2.Value = DateTime.Today;
+                        attGrid();
+                    }
+                }
             }
             else if (controlForm == "Supplier")
             {
-                CodesSuppliers codesSuppliers = new CodesSuppliers();
-                codesSuppliers = SelectDb.SelectCodesSuppliers(0, 2);
-                int idCurrent = codesSuppliers.Id + 1;
-                codesSuppliers.Id = idCurrent;
+                if (string.IsNullOrEmpty(tb1.Text))
+                {
+                    MessageBox.Show("Preencha o campo Fornecedor", "Aviso", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(tb2.Text))
+                    {
+                        MessageBox.Show("Preencha o campo Código", "Aviso", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        CodesSuppliers codesSuppliers = new CodesSuppliers();
+                        codesSuppliers = SelectDb.SelectCodesSuppliers(0, 2);
+                        int idCurrent = codesSuppliers.Id + 1;
+                        codesSuppliers.Id = idCurrent;
 
-                codesSuppliers.IdProduct = idProductCurrent;
-                codesSuppliers.IdSupplier = Convert.ToInt32(tb1.Text);
-                codesSuppliers.Code = tb2.Text;
+                        codesSuppliers.IdProduct = idProductCurrent;
+                        codesSuppliers.IdSupplier = Convert.ToInt32(tb1.Text);
+                        codesSuppliers.Code = tb2.Text;
 
-                InsertDb.InsertCodesSuppliers(codesSuppliers);
+                        InsertDb.InsertCodesSuppliers(codesSuppliers);
 
-                tb1.Text = "";
-                tb2.Text = "";
-                attGrid();
+                        tb1.Text = "";
+                        tb2.Text = "";
+                        attGrid();
+                    }
+                }
             }
         }
 
@@ -268,7 +319,7 @@ namespace StockController
             {
                 dgv_Search.Rows.Clear();
                 DataTable dataTable = new DataTable();
-                dataTable = SelectDb.SelectBarcodeAll();
+                dataTable = SelectDb.SelectBarcodeAll(idProductCurrent);
                 foreach (DataRow linha in dataTable.Rows)
                 {
                     dgv_Search.Rows.Add(linha.ItemArray);
@@ -278,7 +329,7 @@ namespace StockController
             {
                 dgv_Search.Rows.Clear();
                 DataTable dataTable = new DataTable();
-                dataTable = SelectDb.SelectBatchAll();
+                dataTable = SelectDb.SelectBatchAll(idProductCurrent);
                 foreach (DataRow linha in dataTable.Rows)
                 {
                     dgv_Search.Rows.Add(linha.ItemArray);
@@ -288,7 +339,7 @@ namespace StockController
             {
                 dgv_Search.Rows.Clear();
                 DataTable dataTable = new DataTable();
-                dataTable = SelectDb.SelectCodesSuppliersAll();
+                dataTable = SelectDb.SelectCodesSuppliersAll(idProductCurrent);
                 foreach (DataRow linha in dataTable.Rows)
                 {
                     dgv_Search.Rows.Add(linha.ItemArray);

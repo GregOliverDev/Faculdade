@@ -1,6 +1,7 @@
 ﻿using StockController.Data;
 using StockController.Models;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -25,6 +26,14 @@ namespace StockController
             pb_Borda_Hori_2.BackColor = colorSecond;
             pb_Borda_Vert_1.BackColor = colorBack;
             lb_Status_Product.BackColor = colorSecond;
+            ts_Search_Code.MaxLength = 15;
+            tb_Brand_Product.MaxLength = 10;
+            tb_Category_Product.MaxLength = 10;
+            tb_UnitM_Product.MaxLength = 10;
+            tb_Value_Product.MaxLength = 20;
+            tb_Cost_Product.MaxLength = 20;
+            tb_Descri_Product.MaxLength = 200;
+            tb_Name_Product.MaxLength = 50;
 
             #region buttonFlat
             foreach (Control control in Controls)
@@ -133,7 +142,6 @@ namespace StockController
 
             if (cod <= 0)
             {
-                MessageBox.Show("Digite um codigo valido", "Aviso", MessageBoxButtons.OK);
                 bt_Cancel_Click(sender, e);
             }
             else
@@ -153,6 +161,9 @@ namespace StockController
 
                     tb_Brand_Product.Enabled = true;
                     bt_Search_Brand.Enabled = true;
+
+                    tb_UnitM_Product.Enabled = true;
+                    bt_Search_UnitM.Enabled = true;
 
                     tb_Value_Product.Enabled = true;
                     tb_Cost_Product.Enabled = true;
@@ -192,6 +203,10 @@ namespace StockController
                     tb_Brand_Product.Text = product.IdBrand.ToString();
                     bt_Search_Brand.Enabled = true;
 
+                    tb_UnitM_Product.Enabled = true;
+                    tb_UnitM_Product.Text = product.IdUnitM.ToString();
+                    bt_Search_UnitM.Enabled = true;
+
                     tb_Value_Product.Enabled = true;
                     tb_Value_Product.Text = product.Value.ToString();
 
@@ -214,6 +229,12 @@ namespace StockController
                         strStatusCbx = "Inativo";
                     }
 
+                    DataTable useBatch = SelectDb.SelectBatchAll(product.Code);
+                    if (useBatch.Rows.Count > 0)
+                    {
+                        cbx_Use_Batch.Checked = true;
+                    }
+
                     tb_Descri_Product.Enabled = true;
                     tb_Descri_Product.Text = product.Description;
 
@@ -227,6 +248,7 @@ namespace StockController
 
                     tb_Category_Product_Leave(sender, e);
                     tb_Brand_Product_Leave(sender, e);
+                    tb_UnitM_Product_Leave(sender, e);
 
                     controlIG = "Update";
                 }
@@ -235,50 +257,101 @@ namespace StockController
 
         private void bt_Save_Click(object sender, EventArgs e)
         {
-            Product product = new Product();
-            product = SelectDb.SelectProduct(product.Code, 1);
-            product.Code = int.Parse(ts_Search_Code.Text);
-            product.Name = tb_Name_Product.Text;
-            product.Value = float.Parse(tb_Value_Product.Text);
-            product.Description = tb_Descri_Product.Text;
-            product.ReplacementCost = float.Parse(tb_Cost_Product.Text);
-            product.IdCategory = int.Parse(tb_Category_Product.Text);
-            product.IdBrand = int.Parse(tb_Brand_Product.Text);
-            product.Status = strStatusCbx;
 
-            string strCheckName = product.Name.Replace(" ", "").Replace("\r\n", "");
-            string strCheckDesc = product.Description.Replace(" ", "").Replace("\r\n", "");
-            string strCheckStatus = product.Status.Replace(" ", "").Replace("\r\n", "");
-
-            if (controlIG == "Insert")
+            if (string.IsNullOrEmpty(tb_Name_Product.Text))
             {
-                if (strCheckDesc == "")
-                {
-                    MessageBox.Show("Preencha o campo Descrição.", "Aviso", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    InsertDb.InsertProduct(product);
-                    
-                    Stock stock = new Stock();
-                    stock.IdProduct = product.Code;
-                    stock.Quant = 0;
-                    InsertDb.InsertStock(stock);
-                    bt_Cancel_Click(sender, e);
-                    MessageBox.Show("Produto cadastrado com Sucesso", "Aviso", MessageBoxButtons.OK);
-                }
+                MessageBox.Show("Preencha o campo Nome", "Aviso", MessageBoxButtons.OK);
             }
-            else if (controlIG == "Update")
+            else
             {
-                if (strCheckDesc == "")
+                if (string.IsNullOrEmpty(tb_Descri_Product.Text))
                 {
-                    MessageBox.Show("Preencha o campo Descrição.", "Aviso", MessageBoxButtons.OK);
+                    MessageBox.Show("Preencha o campo Descrição", "Aviso", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    UpdateDb.UpdateProduct(product);
-                    bt_Cancel_Click(sender, e);
-                    MessageBox.Show("Produto atualizado com Sucesso", "Aviso", MessageBoxButtons.OK);
+                    if (string.IsNullOrEmpty(tb_Value_Product.Text))
+                    {
+                        MessageBox.Show("Preencha o campo Valor", "Aviso", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        if (string.IsNullOrEmpty(tb_Cost_Product.Text))
+                        {
+                            MessageBox.Show("Preencha o campo Custo Reposição", "Aviso", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            if (string.IsNullOrEmpty(tb_UnitM_Product.Text))
+                            {
+                                MessageBox.Show("Preencha o campo Unidade", "Aviso", MessageBoxButtons.OK);
+                            }
+                            else
+                            {
+                                if (string.IsNullOrEmpty(tb_Brand_Product.Text))
+                                {
+                                    MessageBox.Show("Preencha o campo Marca", "Aviso", MessageBoxButtons.OK);
+                                }
+                                else
+                                {
+                                    if (string.IsNullOrEmpty(tb_Category_Product.Text))
+                                    {
+                                        MessageBox.Show("Preencha o campo Categoria", "Aviso", MessageBoxButtons.OK);
+                                    }
+                                    else
+                                    {
+                                        Product product = new Product();
+                                        product = SelectDb.SelectProduct(product.Code, 1);
+                                        product.Code = int.Parse(ts_Search_Code.Text);
+                                        product.Name = tb_Name_Product.Text;
+                                        product.Value = float.Parse(tb_Value_Product.Text);
+                                        product.Description = tb_Descri_Product.Text;
+                                        product.ReplacementCost = float.Parse(tb_Cost_Product.Text);
+                                        product.IdCategory = int.Parse(tb_Category_Product.Text);
+                                        product.IdBrand = int.Parse(tb_Brand_Product.Text);
+                                        product.IdUnitM = int.Parse(tb_UnitM_Product.Text);
+                                        product.Status = strStatusCbx;
+
+                                        string strCheckName = product.Name.Replace(" ", "").Replace("\r\n", "");
+                                        string strCheckDesc = product.Description.Replace(" ", "").Replace("\r\n", "");
+                                        string strCheckStatus = product.Status.Replace(" ", "").Replace("\r\n", "");
+
+                                        if (controlIG == "Insert")
+                                        {
+                                            if (strCheckDesc == "")
+                                            {
+                                                MessageBox.Show("Preencha o campo Descrição.", "Aviso", MessageBoxButtons.OK);
+                                            }
+                                            else
+                                            {
+                                                InsertDb.InsertProduct(product);
+
+                                                Stock stock = new Stock();
+                                                stock.IdProduct = product.Code;
+                                                stock.Quant = 0;
+                                                InsertDb.InsertStock(stock);
+                                                bt_Cancel_Click(sender, e);
+                                                MessageBox.Show("Produto cadastrado com Sucesso", "Aviso", MessageBoxButtons.OK);
+                                            }
+                                        }
+                                        else if (controlIG == "Update")
+                                        {
+                                            if (strCheckDesc == "")
+                                            {
+                                                MessageBox.Show("Preencha o campo Descrição.", "Aviso", MessageBoxButtons.OK);
+                                            }
+                                            else
+                                            {
+                                                UpdateDb.UpdateProduct(product);
+                                                bt_Cancel_Click(sender, e);
+                                                MessageBox.Show("Produto atualizado com Sucesso", "Aviso", MessageBoxButtons.OK);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -310,6 +383,7 @@ namespace StockController
             if (string.IsNullOrEmpty(txtIdCategory))
             {
                 txtIdCategory = string.Empty;
+                tb_Viewer_Category.Text = txtIdCategory;
             }
             else
             {
@@ -357,6 +431,7 @@ namespace StockController
             if (string.IsNullOrEmpty(txtidBrand))
             {
                 txtidBrand = string.Empty;
+                tb_Viewer_Brand.Text = string.Empty;
             }
             else
             {
@@ -402,6 +477,7 @@ namespace StockController
             if (string.IsNullOrEmpty(txtIdUnit))
             {
                 txtIdUnit = string.Empty;
+                tb_Viewer_UnitM.Text = string.Empty;
             }
             else
             {
@@ -468,6 +544,11 @@ namespace StockController
             tb_Brand_Product.Text = "";
             tb_Viewer_Brand.Text = "";
             bt_Search_Brand.Enabled = false;
+
+            tb_UnitM_Product.Enabled = false;
+            tb_UnitM_Product.Text = "";
+            tb_Viewer_UnitM.Text = "";
+            bt_Search_UnitM.Enabled = false;
 
             tb_UnitM_Product.Enabled = false;
             tb_UnitM_Product.Text = "";
@@ -544,6 +625,18 @@ namespace StockController
             };
 
             additional_Product_Screen.Show();
+        }
+
+        private void ts_Search_Code_KeyPressFloat(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

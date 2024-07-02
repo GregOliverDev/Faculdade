@@ -1,5 +1,6 @@
 ﻿using StockController.Data;
 using StockController.Models;
+using StockController.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -202,6 +203,11 @@ namespace StockController
 
                 lb_Quant_Current.Text = stock.Quant.ToString();
             }
+        }
+
+        private void bt_Export_Click(object sender, EventArgs e)
+        {
+            ExportExcel.ExportDataGridViewToExcel(dgv_Search);
         }
     }
 }

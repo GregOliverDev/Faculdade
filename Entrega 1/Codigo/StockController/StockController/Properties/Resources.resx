@@ -124,16 +124,19 @@
   <data name="BordaHori1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Bordas\BordaHori1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BordaVert1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Bordas\BordaVert1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Icones\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lessIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Icones\lessIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Icones\addIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BordaVert1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Bordas\BordaVert1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lessIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Icones\lessIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ask" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Icones\ask.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

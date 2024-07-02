@@ -421,6 +421,7 @@
             this.bt_Export.TabIndex = 50;
             this.bt_Export.Text = "Exportar Dados";
             this.bt_Export.UseVisualStyleBackColor = true;
+            this.bt_Export.Click += new System.EventHandler(this.bt_Export_Click);
             // 
             // Search_Screen
             // 

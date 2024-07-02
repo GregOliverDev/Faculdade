@@ -1,4 +1,5 @@
 ﻿using StockController.Data;
+using StockController.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,6 +113,11 @@ namespace StockController
                     dgv_Search.Rows.Add(linha.ItemArray);
                 }
             }
+        }
+
+        private void bt_Export_Click(object sender, EventArgs e)
+        {
+            ExportExcel.ExportDataGridViewToExcel(dgv_Search);
         }
     }
 }
